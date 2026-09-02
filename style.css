@@ -1,0 +1,1103 @@
+/* =========================================================
+   Thomas Van Camp - Personal Portfolio
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Global Styles
+   --------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0f1117;
+    --background-light: #151821;
+    --card: #191c25;
+    --card-hover: #20242f;
+
+    --text: #f1f3f5;
+    --text-muted: #a7adb8;
+
+    --accent: #6ea8fe;
+    --accent-hover: #8bb9ff;
+
+    --border: #292e3a;
+
+    --max-width: 1100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   Typography
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--text-muted);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   Header / Navigation
+   --------------------------------------------------------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(15, 17, 23, 0.9);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    padding: 1.2rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    transition: color 0.2s ease;
+}
+
+.site-name:hover {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+}
+
+/* Small line underneath active navigation item */
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Shared Section Styles
+   --------------------------------------------------------- */
+
+.section-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    padding: 6rem 2rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.75rem;
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Hero Section
+   --------------------------------------------------------- */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    /*
+       Subtle radial gradients give the background
+       some depth without needing an image.
+    */
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(110, 168, 254, 0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(110, 168, 254, 0.05),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    max-width: var(--max-width);
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    margin-bottom: 2.5rem;
+
+    font-size: 1.15rem;
+}
+
+/* About Me */
+.about-section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    padding: 6rem 2rem;
+}
+
+.about-content {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text .eyebrow {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.about-text h2 {
+    margin-bottom: 1.25rem;
+}
+
+.about-text p {
+    max-width: 600px;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.about-image {
+    flex: 0 0 220px;
+}
+
+.about-image img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .about-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .about-image {
+        flex: none;
+    }
+
+    .about-image img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Buttons
+   --------------------------------------------------------- */
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 0.8rem 1.4rem;
+
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button.primary {
+    background: var(--accent);
+    color: #0b0d12;
+}
+
+.button.primary:hover {
+    background: var(--accent-hover);
+}
+
+.button.secondary {
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+}
+
+.button.secondary:hover {
+    background: var(--card);
+    border-color: #3b4250;
+}
+
+
+/* ---------------------------------------------------------
+   About / Introduction
+   --------------------------------------------------------- */
+
+.intro {
+    background: var(--background-light);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.intro .section-container {
+    max-width: 850px;
+}
+
+.intro h2 {
+    margin-bottom: 1.5rem;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   Featured Projects
+   --------------------------------------------------------- */
+
+.featured {
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-right: 0.95rem;
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--accent-hover);
+}
+
+
+/* ---------------------------------------------------------
+   Project Cards
+   --------------------------------------------------------- */
+
+.project-preview {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+}
+
+.project-card {
+    min-height: 300px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 2rem;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    background: var(--card-hover);
+
+    border-color: #3a414f;
+}
+
+.project-card-content {
+    max-width: 500px;
+}
+
+.project-type {
+    margin-bottom: 0.5rem;
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    margin-bottom: 1.25rem;
+}
+
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+
+.site-footer {
+    background: #0b0d12;
+}
+
+.footer-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    padding: 3rem 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
+}
+
+.footer-name h3 {
+    margin-bottom: 0.25rem;
+
+    font-size: 1.1rem;
+}
+
+.footer-name p {
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+
+    margin-left: 0.95rem;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+
+    padding: 1.5rem 2rem;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive Design - Tablets
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 1rem 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero-content {
+        padding: 5rem 1.25rem;
+    }
+
+    .section-container {
+        padding: 4.5rem 1.25rem;
+    }
+
+    .project-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-content {
+        padding: 2.5rem 1.25rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Responsive Design - Phones
+   --------------------------------------------------------- */
+
+@media (max-width: 520px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0.75rem;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        text-align: center;
+    }
+
+    .project-card {
+        min-height: 250px;
+
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* Reduce animations for users who request it */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
+
+
+/* =========================================================
+   Projects Page
+   ========================================================= */
+
+.page-hero {
+    border-bottom: 1px solid var(--border);
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(110, 168, 254, 0.08),
+            transparent 35%
+        );
+}
+
+.page-hero h1 {
+    margin-bottom: 1.5rem;
+}
+
+.page-description {
+    max-width: 700px;
+
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.projects-section {
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-games {
+    background: var(--background-light);
+}
+
+.section-heading-simple {
+    margin-bottom: 3rem;
+}
+
+.section-heading-simple .eyebrow {
+    margin-bottom: 0.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   Research Project
+   --------------------------------------------------------- */
+
+.project-featured {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr;
+
+    gap: 4rem;
+
+    align-items: center;
+}
+
+.project-image {
+    width: 100%;
+}
+
+.project-image img,
+.game-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.image-placeholder {
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.project-info h3 {
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+}
+
+.project-info p {
+    margin-bottom: 1rem;
+}
+
+.project-type {
+    margin-bottom: 0.6rem;
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Project Tags
+   --------------------------------------------------------- */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 0.5rem;
+
+    margin: 1.5rem 0;
+}
+
+.project-tags span {
+    padding: 0.35rem 0.7rem;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    color: var(--text-muted);
+
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+
+/* ---------------------------------------------------------
+   Game Projects
+   --------------------------------------------------------- */
+
+.game-projects {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5rem;
+}
+
+.game-project {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4rem;
+
+    align-items: center;
+}
+
+.game-project:nth-child(even) .game-image {
+    order: 2;
+}
+
+.game-project:nth-child(even) .game-info {
+    order: 1;
+}
+
+.game-image {
+    width: 100%;
+}
+
+.game-info h3 {
+    margin-bottom: 1rem;
+
+    font-size: 2rem;
+}
+
+.game-info p {
+    margin-bottom: 1rem;
+}
+
+/* Embedded project videos */ 
+.video-container { 
+    position: relative; 
+    overflow: hidden; 
+    aspect-ratio: 16 / 9; 
+    background: var(--card); 
+}
+
+.video-container iframe { 
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+    border: none; 
+}
+
+
+/* ---------------------------------------------------------
+   Projects Page - Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .project-featured,
+    .game-project {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .game-project:nth-child(even) .game-image {
+        order: 1;
+    }
+
+    .game-project:nth-child(even) .game-info {
+        order: 2;
+    }
+
+    .image-placeholder {
+        min-height: 250px;
+    }
+
+    .project-info h3,
+    .game-info h3 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* =========================================================
+   Publications / CV Page
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Publication
+   --------------------------------------------------------- */
+
+.publication-featured {
+    max-width: 900px;
+
+    padding: 2.5rem;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.publication-content h3 {
+    max-width: 800px;
+
+    margin-bottom: 0.75rem;
+
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.publication-authors {
+    margin-bottom: 1.5rem;
+
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.publication-content > p:not(.project-type):not(.publication-authors) {
+    margin-bottom: 1rem;
+
+    line-height: 1.8;
+}
+
+.publication-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    margin-top: 1.5rem;
+}
+
+
+/* ---------------------------------------------------------
+   CV Section
+   --------------------------------------------------------- */
+
+.cv-section {
+    background: var(--background-light);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.cv-card {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 3rem;
+
+    padding: 2.5rem;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.cv-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.cv-card p:not(.eyebrow) {
+    max-width: 650px;
+}
+
+
+/* ---------------------------------------------------------
+   Experience
+   --------------------------------------------------------- */
+
+.experience-section {
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-list {
+    max-width: 950px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.experience-item {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    gap: 2.5rem;
+
+    padding: 2.5rem 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.experience-item:first-child {
+    border-top: none;
+}
+
+.experience-date {
+    padding-top: 0.2rem;
+
+    color: var(--accent);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.experience-content h3 {
+    margin-bottom: 0.35rem;
+
+    font-size: 1.35rem;
+}
+
+.experience-role {
+    margin-bottom: 1rem;
+
+    color: var(--text);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.experience-content > p:last-child {
+    max-width: 700px;
+
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   Publications / CV Page - Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .publication-featured {
+        padding: 1.75rem;
+    }
+
+    .cv-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 1.75rem;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+
+        gap: 0.75rem;
+
+        padding: 2rem 0;
+    }
+
+    .experience-date {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Thomas Van Camp</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="site-name">Thomas Van Camp</a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="publications.html">Publications / CV</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-hero">
+            <div class="section-container">
+                <p class="eyebrow">My Work</p>
+
+                <h1>Projects</h1>
+
+                <p class="page-description">
+                    A selection of my research, software, and game development
+                    projects. My work combines programming, computational
+                    research, and the design and implementation of interactive
+                    systems.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Research Projects -->
+        <section class="projects-section">
+            <div class="section-container">
+
+                <div class="section-heading-simple">
+                    <p class="eyebrow">Research</p>
+                    <h2>Quantum Computing</h2>
+                </div>
+
+
+                <!-- Surface Code Project -->
+                <article class="project project-featured" id="surface-code">
+
+                    <div class="project-image">
+                        <img src="images/surface-code/threshold.png"
+                            alt="Surface code decoder benchmarking results">
+                    </div>
+
+                    <div class="project-info">
+
+                        <p class="project-type">
+                            Quantum Error Correction
+                        </p>
+
+                        <h3>
+                            Surface Code Decoder Benchmarking
+                        </h3>
+
+                        <p>
+                            A research project investigating and benchmarking
+                            different quantum error correction decoders on
+                            the surface code.
+                        </p>
+
+                        <p>
+                            The project compares decoders from several
+                            different approaches, including minimum-weight
+                            perfect matching, union-find, neural network,
+                            and tensor network methods. I developed a
+                            Python-based benchmarking framework to evaluate
+                            their correctness, logical error thresholds,
+                            decoding latency, robustness, and scalability.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Quantum Computing</span>
+                            <span>QEC</span>
+                            <span>Surface Code</span>
+                            <span>Tensor Networks</span>
+                            <span>Neural Networks</span>
+                        </div>
+
+                        <a href="https://github.com/tvc04/qec_decoding"
+                           class="text-link"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View on GitHub →
+                        </a>
+
+                        <a
+                            href="Benchmarking Quantum Error Correction Decoders on the Surface Code.pdf"
+                            class="button primary"
+                            download
+                        >
+                            Download Report ↓
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Game Development -->
+        <section class="projects-section projects-games">
+
+            <div class="section-container">
+
+                <div class="section-heading-simple">
+                    <p class="eyebrow">Game Development</p>
+                    <h2>Video Games</h2>
+                </div>
+
+
+                <div class="game-projects">
+
+
+                    <!-- SHELLS -->
+                    <article class="game-project" id="shells">
+
+                        <div class="project-image video-container">
+                            <iframe src="https://www.youtube.com/embed/dbX4ZCwov9U" 
+                                title="SHELLS Gameplay" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                                gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen> 
+                            </iframe> 
+                        </div>
+
+                        <div class="game-info">
+
+                            <p class="project-type">
+                                Multiplayer Party Game
+                            </p>
+
+                            <h3>SHELLS</h3>
+
+                            <p>
+                                A local multiplayer versus game designed for
+                                a game-expo environment. The game combines
+                                chaotic combat with a synergistic upgrade
+                                system inspired by games such as
+                                <em>Rounds</em> and <em>Wii Tanks</em>.
+                            </p>
+
+                            <p>
+                                I focused on quality-of-life systems,
+                                interface effects, visual feedback, and
+                                controller management. I designed the
+                                upgrade-menu slot-machine effect, implemented
+                                player-specific colors for bullets and
+                                upgrades, and solved several controller
+                                detection and input-management issues.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>Game Systems</span>
+                                <span>UI/UX</span>
+                            </div>
+
+                            <a
+                                href="https://erikpaa.itch.io/shells"
+                                class="text-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Play on itch.io →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Spar of Spade -->
+                    <article class="game-project" id="spar-of-spade">
+
+                        <div class="game-image">
+
+                            <img src="images/spar-of-spade/spar.png"
+                                alt="Spar of Spade gameplay">
+                        
+                            </div>
+
+                        <div class="game-info">
+
+                            <p class="project-type">
+                                Roguelike Dungeon Crawler
+                            </p>
+
+                            <h3>Spar of Spade</h3>
+
+                            <p>
+                                A haunted-mine themed roguelike dungeon
+                                crawler built around player choice and
+                                strategic progression.
+                            </p>
+
+                            <p>
+                                I designed and implemented the game's central
+                                enemy-selection mechanic. After completing a
+                                dungeon, the player chooses an enemy to add
+                                to future dungeons. Combined with purchasable
+                                upgrades, this allows players to build a
+                                loadout that synergizes with the enemies they
+                                choose to fight.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>Gameplay Design</span>
+                                <span>Game Systems</span>
+                            </div>
+
+                            <a
+                                href="https://tommyvc04.itch.io/spar-of-spade"
+                                class="text-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Play on itch.io →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <div class="footer-name">
+                <h3>Thomas Van Camp</h3>
+                <p>University of Michigan</p>
+            </div>
+
+            <div class="footer-links">
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+                <a
+                    href="https://github.com/tvc04/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Thomas Van Camp. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
