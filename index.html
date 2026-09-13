@@ -3,176 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Thomas Van Camp</title>
-
+    <title>Thomas Van Camp | Quantum Computing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Header / Navigation -->
-    <header class="site-header">
-        <nav class="navbar">
-            <a href="index.html" class="site-name">Thomas Van Camp</a>
-
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-                <a href="publications.html" class="active">Publications / CV</a>
-            </div>
-        </nav>
-    </header>
-
-
-    <!-- Main Content -->
-    <main>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="eyebrow">Thomas Van Camp</p>
-
-                <h1>Programmer, Researcher,<br>and Game Developer.</h1>
-
-                <p class="hero-description">
-                    Welcome to my personal portfolio. Here you can find
-                    information about my projects, research, publications,
-                    and other work.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="projects.html" class="button primary">
-                        View My Projects
-                    </a>
-
-                    <a href="publications.html" class="button secondary">
-                        Publications & CV
-                    </a>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Introduction -->
-        <section class="about-section"> 
-            <div class="about-content"> 
-                <div class="about-text"> 
-                    <span class="eyebrow">Introduction</span>
-                    <h2>About Me</h2> 
-                    <p> 
-                        I'm a computer science student at the 
-                        Univeristy of Michigan interested 
-                        in quantum computing, software 
-                        engineering, and game development.
-                    </p> 
-                    <p> 
-                        My current research focuses on 
-                        quantum error correction, tensor networks, 
-                        and efficient classical simulation of quantum circuits. 
-                    </p> 
-                </div> 
+    <div class="container">
+        <!-- Sidebar Navigation & Profile -->
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Thomas Van Camp" class="profile-pic">
+            <h1>Thomas Van Camp</h1>
+            <p class="bio">B.S. Computer Science, Minor in Math<br>University of Michigan '27</p>
             
-                <div class="about-image"> 
-                    <img src="images/headshot/headshot.png" alt="Thomas Van Camp"> 
-                </div> 
+            <div class="social-icons">
+                <a href="mailto:tvancamp@umich.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/tvc04" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/thomas-van-camp/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://arxiv.org/abs/2607.21337" target="_blank" title="arXiv"><i class="fas fa-book"></i></a>
             </div>
-        </section>
+            
+            <nav class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#projects">Projects</a>
+                <a href="#interests">Interests & Leadership</a>
+                <a href="Thomas Van Camp CV.pdf" target="_blank" class="cv-link"><i class="fas fa-file-pdf"></i> Download CV</a>
+            </nav>
+        </aside>
 
+        <!-- Main Content -->
+        <main class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I am a senior in Computer Science (Minor in Mathematics) at the <strong>University of Michigan</strong> (GPA: 3.94/4.0), applying to PhD programs in <strong>Quantum Computing</strong> for Fall 2027.</p>
+                <p>My research interests lie at the intersection of quantum compilation, fault-tolerant surface-code quantum computing, and efficient classical simulation of quantum systems. I am currently an undergraduate researcher in the <strong>CAFQA Lab</strong> under Prof. Gokul Ravi, focusing on dynamic lattice-surgery compilers for fault-tolerant architectures.</p>
+            </section>
 
-        <!-- Featured Work -->
-        <section class="featured">
-            <div class="section-container">
+            <section id="research">
+                <h2>Undergraduate Research</h2>
+                
+                <div class="card">
+                    <h3>Computer Architecture for Quantum Advantage (CAFQA) Lab</h3>
+                    <p class="sub-heading">University of Michigan | PI: Prof. Gokul Ravi | <em>Aug 2026 – Present</em></p>
+                    <ul>
+                        <li>Exploring and improving PureMagic, a dynamic lattice-surgery compiler for fault-tolerant quantum computing, focusing on resource-efficient scheduling of logical operations and magic-state cultivation.</li>
+                        <li>Investigating compiler scheduling and resource-allocation techniques tailored for surface-code architectures.</li>
+                    </ul>
+                </div>
 
-                <div class="section-heading">
+                <div class="card">
+                    <h3>Center for Quantum Computing, Science, and Engineering</h3>
+                    <p class="sub-heading">Michigan State University | PI: Prof. Ryan LaRose | <em>May 2026 – Present</em></p>
+                    <ul>
+                        <li>Selected as one of ten students for the NSF-sponsored MSU ACRES REU (Award #2349002).</li>
+                        <li>Conducted research on efficient classical simulations of large-scale unitary cluster Jastrow (LUCJ) circuits.</li>
+                        <li>Leveraged Qiskit and Quimb to create pipelines mapping molecular targets into quantum circuits for Matrix Product State (MPS) tensor network simulations.</li>
+                        <li>Optimized GPU-based workflows on MSU's ICER HPC cluster using Python libraries (Qiskit, Quimb, PySCF, ffsim).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="publications">
+                <h2>Publications & Presentations</h2>
+                
+                <div class="pub-item">
+                    <p class="pub-title"><strong>Efficient classical simulation of large-scale unitary cluster Jastrow circuits</strong></p>
+                    <p class="authors">Hrishikesh Belagali, <strong>Thomas Van Camp</strong>, R. Pradeep, Sourin Das, Namit Anand, Ryan LaRose</p>
+                    <p class="venue"><em>In review, Physical Review Letters (2026)</em> | <a href="https://arxiv.org/abs/2607.21337" target="_blank">[arXiv:2607.21337]</a></p>
+                </div>
+
+                <div class="pub-item">
+                    <p class="pub-title"><strong>Classical Simulation of Large-Scale Unitary Cluster Jastrow (LUCJ) Circuits</strong></p>
+                    <p class="authors"><strong>Thomas Van Camp</strong></p>
+                    <p class="venue"><em>Oral Presentation</em>, Advanced Computational Research Experience Annual Symposium, MSU (July 2026)</p>
+                </div>
+
+                <div class="pub-item">
+                    <p class="pub-title"><strong>Classical Simulation of Large-Scale Unitary Cluster Jastrow (LUCJ) Circuits</strong></p>
+                    <p class="authors"><strong>Thomas Van Camp</strong>, Hrishikesh Belagali, R. Pradeep, Sourin Das, Namit Anand, Ryan LaRose</p>
+                    <p class="venue"><em>Poster Presentation</em>, Mid-Michigan Symposium for Undergraduate Research Experiences (Mid-SURE), MSU (July 2026)</p>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Featured Projects</h2>
+                <div class="card">
+                    <h3>Benchmarking Quantum Error Correction (QEC) Decoders on the Surface Code</h3>
+                    <p class="sub-heading"><em>Feb 2026 – May 2026</em> | <a href="https://github.com/tvc04/qec_decoding" target="_blank"><i class="fab fa-github"></i> Source Code</a></p>
+                    <ul>
+                        <li>Designed and implemented a simulation pipeline for testing QEC decoders on the surface code</li>
+                        <li>Evaluated decoder accuracy, latency, threshold, robustness, and scalability across physical error rates and code distances.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="interests">
+                <h2>Interests & Leadership</h2>
+                
+                <div class="card interest-card">
+                    <div class="interest-icon">
+                        <i class="fas fa-person-skiing fa-3x"></i>
+                    </div>
                     <div>
-                        <p class="eyebrow">Selected Work</p>
-                        <h2>What I've Been Working On</h2>
+                        <h3>President, <a href="https://maizepages.umich.edu/organization/skiandsnowboardclub" target="_blank">Michigan Ski & Snowboard Club</a></h3>
+                        <p>When I'm not studying quantum circuits, I lead the Michigan Ski & Snowboard Club. As President, I oversee club operations, trip logistics, and community building for hundreds of student members at UMich.</p>
                     </div>
-
-                    <a href="projects.html" class="text-link">
-                        View all projects →
-                    </a>
                 </div>
 
-                <div class="project-preview">
-
-                    <div class="project-card">
-                        <div class="project-card-content">
-                            <p class="project-type">Research</p>
-
-                            <h3>LUCJ Circuit Simulations</h3>
-
-                            <p>
-                                Quantum chemistry research involving finding 
-                                ways to classically simulate large-scale 
-                                unitary cluster Jastrow circuits efficiently.
-                            </p>
-
-                            <a href="publications.html#lucj" class="text-link">
-                                Learn more →
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-card-content">
-                            <p class="project-type">Projects</p>
-
-                            <h3>Quantum Error Correction</h3>
-
-                            <p>
-                                Benchmarking different decoding techniques 
-                                for quantum error correction on the surface code
-                                including tensor and neural networks.
-                            </p>
-
-                            <a href="projects.html#surface-code" class="text-link">
-                                Learn more →
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-
-            <div class="footer-name">
-                <h3>Thomas Van Camp</h3>
-                <p>University of Michigan, Computer Science and Enginering</p>
-            </div>
-
-            <div class="footer-links">
-                <a
-                    href="https://www.linkedin.com/in/thomas-van-camp/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    LinkedIn
-                </a>
-                <a
-                    href="https://github.com/tvc04/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    GitHub
-                </a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 Thomas Van Camp</p>
-        </div>
-    </footer>
-
+                <p><strong>Campus Affiliations:</strong> Tau Beta Pi (Engineering Honor Society), QuantUM Club (Quantum Science & Computing), Michigan Hackers (Security Team).</p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
